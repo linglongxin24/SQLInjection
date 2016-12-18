@@ -9,7 +9,7 @@
 
 # 二.先看一下数据表中的数据
 
- * 查询代码：
+ ######1. 查询代码：
  
  ```java
     /**数据库表名**/
@@ -19,9 +19,9 @@
      DBUtil.query(tableName, null);
  ```
  
- * 查询结果：
- 
- ```java
+ ######2. 查询结果：
+  
+  ```java
  SELECT  * FROM emp_test
  成功查询到了14行数据
  第1行：{DEPT_TEST_ID=10, EMP_ID=1001, SALARY=10000, HIRE_DATE=2010-01-12, PASSWORD=123456, BONUS=2000, MANAGER=1005, JOB=Manager, NAME=张无忌}
@@ -42,7 +42,7 @@
   
 # 三.模拟登录，演示SQL注入
 
- * 模拟登录伪代码
+ ######1. 模拟登录伪代码
  
  ```java
             /**用户输入的用户名**/
@@ -55,7 +55,7 @@
              DBUtil.query(sql);
  ```
  
-  * 查询结果
+ ######2. 查询结果
   
   ```java
   SELECT * FROM emp_test WHERE name = '1' OR '1'='1' and password = '1' OR '1'='1'
@@ -80,7 +80,7 @@
  
 # 四.模拟登录，防止SQL注入
  
-  * 模拟登录伪代码
+ ###### 1. 模拟登录伪代码
   
   ```java
                /**用户输入的用户名**/
@@ -94,7 +94,7 @@
                DBUtil.query("emp_test", where, whereArgs);
   ```
   
-   * 查询结果
+ ######2. 查询结果
    
   ```java
     /**这条语句只是为了方便调试自己代印的语句，并不是PreparedStatement真正执行的SQL语句**/
